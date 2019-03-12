@@ -93,6 +93,14 @@ header nav li a
   font-family: "Arial Black";
 }
 
+/* CONTACT FORM */
+.new-contact-form input
+{
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
 
 
 footer
