@@ -1,0 +1,11 @@
+
+    <h2>There are <span class="underlined"><%= @contacts.length  %></span> contacts</h2>
+
+    <ul class="contacts-list">
+      <% @contacts.each do |contact| %>
+      <li>
+        <p><%= contact.full_name %> (<%= contact.email %>)</p>
+        <p><a href="contacts/<%= contact.id %>">Show</a> | <a href="#">Edit</a> | <a href="#">Delete</a></p>
+      </li>
+      <% end %>
+    </ul>

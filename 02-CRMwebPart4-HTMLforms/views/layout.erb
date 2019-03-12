@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CRM Project</title>
+    <link rel="stylesheet" href="/css-reset.css">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Contacts Manager</h1>
+      <nav>
+        <ul>
+          <li><a href="/contacts">Home</a></li>
+          <li><a href="#">Add a contact</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <%= yield %>
+    </div>
+
+    <footer>
+      &#169; Martin Maco <%= Time.new.year %>
+    </footer>
+  </body>
+</html>
