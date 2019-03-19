@@ -5,7 +5,10 @@
       <% @contacts.each do |contact| %>
       <li>
         <p><%= contact.full_name %> (<%= contact.email %>)</p>
-        <p><a href="contacts/<%= contact.id %>">Show</a> | <a href="#">Edit</a> | <a href="#">Delete</a></p>
+        <p>
+          <a href="contacts/<%= contact.id %>">Show</a> |
+          <a href="contacts/<%= contact.id %>/edit">Edit</a> |
+          <a href="#">Delete</a></p>
       </li>
       <% end %>
     </ul>

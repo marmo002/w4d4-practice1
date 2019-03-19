@@ -5,15 +5,15 @@ get '/' do
   redirect to '/contacts'
 end
 
-get '/contacts' do
+get '/contacts/:id/edit' do
+  @contact = Contact.find_by(id: params[:id].to_i)
 
-  @contacts = Contact.all
+  if @contact
+    erb :edit_contact
+  else
+    raise Sinatra::NotFound
+  end
 
-  erb :contact
-end
-
-get '/about' do
-  erb :about
 end
 
 get '/contacts/new' do
@@ -31,6 +31,13 @@ get '/contacts/:id' do
 
 end
 
+get '/contacts' do
+
+  @contacts = Contact.all
+
+  erb :contact
+end
+
 post '/contacts' do
   Contact.create(
     first_name: params[:first_name],
@@ -40,6 +47,10 @@ post '/contacts' do
   )
 
   redirect to '/contacts'
+end
+
+get '/about' do
+  erb :about
 end
 
 
