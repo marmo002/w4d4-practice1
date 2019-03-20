@@ -7,4 +7,5 @@
   <input type="text" name="email" placeholder="E-mail" value="<%= @contact.email %>">
   <input type="text" name="note" placeholder="Notes"  value="<%= @contact.note %>">
   <input type="submit" name="submit" value="Update Contact" >
+  <a href="/contacts/<%= @contact.id %>" >Show</a>
 </form>

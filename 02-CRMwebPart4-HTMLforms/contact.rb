@@ -11,6 +11,13 @@ class Contact < ActiveRecord::Base
   field :email, as: :string
   field :note, as: :text
 
+  def self.search_me(search_term)
+    results = []
+    results << self.where("first_name LIKE ?", "%#{search_term}%")
+    results << self.where("last_name LIKE ?", "%#{search_term}%")
+
+    results.flatten
+  end
 
   def full_name
     "#{first_name} #{last_name}"

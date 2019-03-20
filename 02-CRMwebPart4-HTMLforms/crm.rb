@@ -48,9 +48,24 @@ put '/contacts/:id' do
 
 end
 
-get '/contacts' do
+delete '/contacts/:id' do
+  @contact = Contact.find_by({id: params[:id].to_i})
 
+  if @contact
+    @contact.delete
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+
+end
+
+get '/contacts' do
   @contacts = Contact.all
+  
+  if params[:search]
+    @contacts = Contact.search_me( params[:search] )
+  end
 
   erb :contact
 end
